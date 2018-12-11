@@ -13,6 +13,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
+import {NavLink as NLink} from 'react-router-dom'
 
 
 export default class PokeNavbar extends Component {
@@ -33,12 +34,12 @@ export default class PokeNavbar extends Component {
     return (
       <Navbar color="primary" dark expand="sm" className="mb-3">
         <Container>
-          <NavbarBrand href="/">PokeReact</NavbarBrand>
+          <NavbarBrand tag={NLink} to="/">PokeReact</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="#">About</NavLink>
+                <NavLink tag={NLink} to="/about">About</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
